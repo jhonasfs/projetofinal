@@ -8,7 +8,7 @@
 */
 
 #include <string>
-#include "veterinario.h"
+// #include "veterinario.h"
 
 using std::string;
 

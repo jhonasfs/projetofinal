@@ -115,7 +115,7 @@ class Funcionario {
         * @param
         * @return Tipo sanguíneo do funcionário
         */
-        short get_tipo_sanguineo(short tipo);
+        short get_tipo_sanguineo();
 
         /**
         * @brief Funcão que retorna o RH do funcionário

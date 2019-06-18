@@ -12,9 +12,9 @@
 
 using std::string;
 
-#ifndef REPTIL_H
+#ifndef ANIMALEXOTICO_H
 
-#define REPTIL_H
+#define ANIMALEXOTICO_H
 
 
 
