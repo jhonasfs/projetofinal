@@ -7,7 +7,7 @@
 * @sa
 */
 
-#include "animalexotico.h"
+#include "./include/animalexotico.h"
 #include <string>
 
 using std::string;

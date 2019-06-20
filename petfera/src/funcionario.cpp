@@ -7,7 +7,7 @@
 * @sa
 */
 
-#include "funcionario.h"
+#include "./include/funcionario.h"
 #include <string>
 
 using std::string;

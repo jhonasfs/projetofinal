@@ -8,7 +8,7 @@
 */
 
 #include <string>
-#include "animal.h"
+#include "./include/animal.h"
 
 using std::string;
 

@@ -8,7 +8,7 @@
 */
 
 #include <string>
-#include "tratador.h"
+#include "./include/tratador.h"
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
 Tratador::Tratador(){}
