@@ -26,6 +26,8 @@ class Funcionario {
         string especialidade; /**< Especialidade do funcionário.*/
     
     public:
+        static int total;
+
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         Funcionario();
         ~Funcionario();

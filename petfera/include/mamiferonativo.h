@@ -16,12 +16,12 @@
 
 
 
-class ManiferoNativo : public Mamifero, AnimalNativo  {
+class MamiferoNativo : public Mamifero, AnimalNativo  {
    
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
-        ManiferoNativo();
-        ManiferoNativo();
+        MamiferoNativo();
+        ~MamiferoNativo();
 
         //************************** S E T S ************************************
         

@@ -8,10 +8,12 @@
 */
 
 #include <string>
-#include "./include/tratador.h"
+#include "../include/tratador.h"
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-Tratador::Tratador(){}
+Tratador::Tratador(){
+    total++;
+}
 Tratador::~Tratador(){}
 
 //************************** S E T S ************************************

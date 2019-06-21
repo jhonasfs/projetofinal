@@ -30,7 +30,9 @@ class Animal {
         int id_tratador;     /**< Identificador do tratador responsável pelo animal.*/
         string nome_batismo;     /**< Nome de batismo do animal.*/
     
-    private:
+    public:
+        static int total;
+
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         Animal();
         ~Animal();

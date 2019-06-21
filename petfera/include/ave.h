@@ -31,7 +31,7 @@ class Ave : public Animal {
         * @param tamanho Tamanho do bico em cm
         * @return Vazio
         */
-        void tamanho_do_bico_cm(double tamanho);
+        void set_tamanho_do_bico_cm(double tamanho);
 
         /**
         * @brief Funcão que seta a envergadora das asas do animal
@@ -46,7 +46,7 @@ class Ave : public Animal {
         * @param
         * @return Tamanho do bico em cm
         */
-        double tamanho_do_bico_cm();
+        double get_tamanho_do_bico_cm();
 
         /**
         * @brief Funcão que retorna a envergadora das asas do animal

@@ -7,7 +7,6 @@
 * @sa
 */
 
-#include <ctime>
 #include "animal.h"
 #include <string>
 
@@ -19,7 +18,7 @@
 
 class Mamifero : public Animal {
     protected:
-        string cor_pelo; /**< Cor do pelo do animal.*/
+        std::string cor_pelo; /**< Cor do pelo do animal.*/
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         Mamifero();
@@ -31,7 +30,7 @@ class Mamifero : public Animal {
         * @param cor Cor do pelo do animal
         * @return Vazio
         */
-        void set_cor_pelo(string cor);
+        void set_cor_pelo(std::string cor);
 
         //************************** G E T S ************************************
         /**
@@ -39,7 +38,7 @@ class Mamifero : public Animal {
         * @param 
         * @return Cor do pelo do animal
         */
-        string get_cor_pelo();
+        std::string get_cor_pelo();
 
         //************************** O U T R A S ************************************
 

@@ -17,7 +17,7 @@
 
 class Veterinario : public Funcionario {
     private:
-        int crmv;   /**< Código CRMV (Conselho Regional de Medicina Veterinária) do veterinário.*/
+        std::string crmv;   /**< Código CRMV (Conselho Regional de Medicina Veterinária) do veterinário.*/
 
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
@@ -30,7 +30,7 @@ class Veterinario : public Funcionario {
         * @param id CRMV do veterinário
         * @return Vazio
         */
-        void set_crmv(int crmv);
+        void set_crmv(std::string crmv);
 
         //************************** G E T S ************************************
          /**
@@ -38,7 +38,7 @@ class Veterinario : public Funcionario {
         * @param
         * @return CRMV do funcionário
         */
-        int get_crmv();
+        std::string get_crmv();
 
         //************************** O U T R A S ************************************
 };

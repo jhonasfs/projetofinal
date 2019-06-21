@@ -8,21 +8,23 @@
 */
 
 #include <string>
-#include "./include/veterinario.h"
+#include "../include/veterinario.h"
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-Veterinario::Veterinario(){}
+Veterinario::Veterinario(){
+    total++;
+}
 Veterinario::~Veterinario(){}
 
 //************************** S E T S ************************************
 
-void Veterinario::set_crmv(int crmv){
+void Veterinario::set_crmv(std::string crmv){
     this->crmv = crmv;
 }
 
 //************************** G E T S ************************************
 
-int Veterinario::get_crmv(){
+std::string Veterinario::get_crmv(){
     return crmv;
 }
 

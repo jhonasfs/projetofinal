@@ -1,31 +1,37 @@
 /**
-* @file animalexotico.cpp
-* @brief Arquivo de implementação da classe AnimalExotico
+* @file reptil.cpp
+* @brief Arquivo de implementação da classe Reptil
 * @author Jônas Florêncio
 * @since 18/06/2019
 * @date
 * @sa
 */
 
-#include "../include/animalexotico.h"
+#include "../include/reptil.h"
 #include <string>
 
 using std::string;
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-AnimalExotico::AnimalExotico(){}
-AnimalExotico::~AnimalExotico(){}
+Reptil::Reptil(){}
+Reptil::~Reptil(){}
 
 //************************** S E T S ************************************
+void Reptil::set_venenoso(bool venenoso){
+    this->venenoso = venenoso;
+}
 
-void AnimalExotico::set_pais_origem(string pais){
-    this->pais_origem = pais;
+void Reptil::set_tipo_veneno(string tipo){
+    this->tipo_veneno = tipo;
 }
 
 //************************** G E T S ************************************
+bool Reptil::get_venenoso(){
+    return venenoso;
+}
 
-string AnimalExotico::get_pais_origem(){
-    return pais_origem;
+string Reptil::get_tipo_veneno(){
+    return tipo_veneno;
 }
 
 //************************** O U T R A S ************************************

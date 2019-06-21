@@ -21,7 +21,7 @@ class MamiferoExotico : public Mamifero, AnimalExotico  {
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         MamiferoExotico();
-        MamiferoExotico();
+        ~MamiferoExotico();
 
         //************************** S E T S ************************************
         

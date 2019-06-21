@@ -21,7 +21,7 @@ class ReptilNativo : public Reptil, AnimalNativo  {
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         ReptilNativo();
-        ReptilNativo();
+        ~ReptilNativo();
 
         //************************** S E T S ************************************
         

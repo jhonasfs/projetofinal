@@ -7,7 +7,6 @@
 * @sa
 */
 
-#include <ctime>
 #include "animal.h"
 #include <string>
 
@@ -20,7 +19,7 @@
 class Anfibio : public Animal {
     protected:
         int total_de_mudas; /**< Total de mudas do animal.*/
-        tm ultima_muda; /**< Data da última muda do animal.*/
+        std::string ultima_muda; /**< Data da última muda do animal.*/
 
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
@@ -40,7 +39,7 @@ class Anfibio : public Animal {
         * @param dia, mes, ano Dia, mês e ano da última muda do animal
         * @return Vazio
         */
-        void set_ultima_muda(int dia, int mes, int ano);
+        void set_ultima_muda(std::string);
 
         //************************** G E T S ************************************
         /**

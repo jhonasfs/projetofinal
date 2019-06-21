@@ -21,7 +21,7 @@ class AveNativo : public Ave, AnimalNativo  {
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         AveNativo();
-        AveNativo();
+        ~AveNativo();
 
         //************************** S E T S ************************************
         

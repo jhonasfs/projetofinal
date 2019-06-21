@@ -21,7 +21,7 @@ class AveExotico : public Ave, AnimalExotico  {
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         AveExotico();
-        AveExotico();
+        ~AveExotico();
 
         //************************** S E T S ************************************
         

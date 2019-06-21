@@ -7,13 +7,17 @@
 * @sa
 */
 
-#include "./include/funcionario.h"
+#include "../include/funcionario.h"
 #include <string>
 
 using std::string;
 
+int Funcionario::total = 0;
+
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-Funcionario::Funcionario(){}
+Funcionario::Funcionario(){
+    // total++;
+}
 Funcionario::~Funcionario(){}
 
 //************************** S E T S ************************************

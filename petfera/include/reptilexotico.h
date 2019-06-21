@@ -21,7 +21,7 @@ class ReptilExotico : public Reptil, AnimalExotico  {
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         ReptilExotico();
-        ReptilExotico();
+        ~ReptilExotico();
 
         //************************** S E T S ************************************
         

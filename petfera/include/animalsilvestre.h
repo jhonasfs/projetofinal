@@ -20,6 +20,7 @@ using std::string;
 class AnimalSilvestre{
     protected:
         string autorizacao_ibama; /**< Autorização do IBAMA para portar o animal.*/
+        
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         AnimalSilvestre();
