@@ -18,14 +18,14 @@ using std::string;
 
 
 
-class AnimalNativo : public  AnimalSilvestre{
+class AnimalNativo : public  AnimalSilvestre {
     protected:
         string uf_origem; /**< UF de origem do animal.*/
         string autorizacao; /**< Autorização do animal*/
 
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
-        AnimalNativo();
+        AnimalNativo(string uf_origem, string autorizacao, string autorizacao_ibama);
         ~AnimalNativo();
 
         //************************** S E T S ************************************

@@ -18,12 +18,12 @@ using std::string;
 
 
 class AnimalSilvestre{
-    protected:
+    private:
         string autorizacao_ibama; /**< Autorização do IBAMA para portar o animal.*/
         
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
-        AnimalSilvestre();
+        AnimalSilvestre(string autorizacao_ibama);
         ~AnimalSilvestre();
 
         //************************** S E T S ************************************

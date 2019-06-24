@@ -24,6 +24,7 @@ class Anfibio : public Animal {
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         Anfibio();
+        Anfibio(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, int total_de_mudas, std::string ultima_muda);
         ~Anfibio();
 
         //************************** S E T S ************************************

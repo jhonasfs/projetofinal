@@ -29,11 +29,11 @@
 #include <utility>
 #include <sstream>
 #include "../include/animal.h"
-#include "../include/petfera.h"
 #include "../include/funcionario.h"
 #include "../include/veterinario.h"
 #include "../include/tratador.h"
 #include "../include/anfibionativo.h"
+#include "../include/petfera.h"
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
 PetFera::PetFera(){}
@@ -48,68 +48,68 @@ PetFera::~PetFera(){}
 //************************** O U T R A S ************************************
 
 bool PetFera::cadastroAnimal(stringstream *ss){
-    int id; /**< Identificador do animal.*/
-    string classe;  /**< Classe do animal: Amphibia (anfíbio), ​ Reptilia (réptil), ​ Aves (ave), Mammalia ​ (mamífero)*/
-    string nome_cientifico; /**< Nome científico do animal.*/
-    char sexo;  /**< Sexo (M (macho), F (fêmea)) do animal.*/
-    double tamanho; /**< Tamanho médio em metros do animal.*/
-    string dieta;   /**< Dieta alimenticia do animal do animal.*/
-    int id_veterinario; /**< Identificador do veterinário responsável pelo animal.*/
-    int id_tratador;     /**< Identificador do tratador responsável pelo animal.*/
-    string nome_batismo;     /**< Nome de batismo do animal.*/
-    string autorizacao_ibama; /**< Autorização do IBAMA para portar o animal.*/
+    // int id; /**< Identificador do animal.*/
+    // string classe;  /**< Classe do animal: Amphibia (anfíbio), ​ Reptilia (réptil), ​ Aves (ave), Mammalia ​ (mamífero)*/
+    // string nome_cientifico; /**< Nome científico do animal.*/
+    // char sexo;  /**< Sexo (M (macho), F (fêmea)) do animal.*/
+    // double tamanho; /**< Tamanho médio em metros do animal.*/
+    // string dieta;   /**< Dieta alimenticia do animal do animal.*/
+    // int id_veterinario; /**< Identificador do veterinário responsável pelo animal.*/
+    // int id_tratador;     /**< Identificador do tratador responsável pelo animal.*/
+    // string nome_batismo;     /**< Nome de batismo do animal.*/
+    // string autorizacao_ibama; /**< Autorização do IBAMA para portar o animal.*/
 
-    int tipo;
+    // int tipo;
 
-    *ss >> tipo;
+    // *ss >> tipo;
 
-    *ss >> classe;
-    ss->ignore();
-    getline(*ss, nome_cientifico);
-    *ss >> sexo;
-    *ss >> tamanho;
-    ss->ignore();
-    getline(*ss, dieta);
-    *ss >> id_veterinario;
-    *ss >> id_tratador;
-    ss->ignore();
-    getline(*ss, nome_batismo);    
-    getline(*ss, autorizacao_ibama);
+    // *ss >> classe;
+    // ss->ignore();
+    // getline(*ss, nome_cientifico);
+    // *ss >> sexo;
+    // *ss >> tamanho;
+    // ss->ignore();
+    // getline(*ss, dieta);
+    // *ss >> id_veterinario;
+    // *ss >> id_tratador;
+    // ss->ignore();
+    // getline(*ss, nome_batismo);    
+    // getline(*ss, autorizacao_ibama);
 
-    if (classe == "Anfíbio"){
-        int total_de_mudas; /**< Total de mudas do animal.*/
-        string ultima_muda; /**< Data da última muda do animal.*/
+    // if (classe == "Anfíbio"){
+    //     int total_de_mudas; /**< Total de mudas do animal.*/
+    //     string ultima_muda; /**< Data da última muda do animal.*/
 
-        *ss >> total_de_mudas;
-        *ss >> ultima_muda;
+    //     *ss >> total_de_mudas;
+    //     *ss >> ultima_muda;
 
-        if (tipo == NATIVO){
-            string uf_origem; /**< UF de origem do animal.*/
-            string autorizacao; /**< Autorização do animal*/
+    //     if (tipo == NATIVO){
+    //         string uf_origem; /**< UF de origem do animal.*/
+    //         string autorizacao; /**< Autorização do animal*/
 
-            *ss >> uf_origem;
-            *ss >> autorizacao;
+    //         *ss >> uf_origem;
+    //         *ss >> autorizacao;
 
-            AnfibioNativo *anfNat = new AnfibioNativo();
+    //         AnfibioNativo *anfNat = new AnfibioNativo();
 
-            id = anfNat->total;
+    //         id = anfNat->total;
 
-            anfNat->set_id(id);
-            anfNat->set_classe(classe);
-            anfNat->set_nome_cientifico(nome_cientifico);
-            anfNat->set_sexo(sexo);
-            anfNat->set_tamanho(tamanho);
-            anfNat->set_dieta(dieta);
-            anfNat->set_id_veterinario(id_veterinario);
-            anfNat->set_id_tratador(id_tratador);
-            anfNat->set_nome_batismo(nome_batismo);
-            anfNat->set_autorizacao_ibama(autorizacao_ibama);
+    //         anfNat->set_id(id);
+    //         anfNat->set_classe(classe);
+    //         anfNat->set_nome_cientifico(nome_cientifico);
+    //         anfNat->set_sexo(sexo);
+    //         anfNat->set_tamanho(tamanho);
+    //         anfNat->set_dieta(dieta);
+    //         anfNat->set_id_veterinario(id_veterinario);
+    //         anfNat->set_id_tratador(id_tratador);
+    //         anfNat->set_nome_batismo(nome_batismo);
+    //         // anfNat->set_autorizacao_ibama(autorizacao_ibama);
             
 
-        }
-    }
+    //     }
+    // }
 
-
+    
 
     return true;
 }

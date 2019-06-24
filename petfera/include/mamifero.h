@@ -14,14 +14,14 @@
 
 #define MAMIFERO_H
 
-
+using std::string;
 
 class Mamifero : public Animal {
     protected:
         std::string cor_pelo; /**< Cor do pelo do animal.*/
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
-        Mamifero();
+        Mamifero(int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, string cor_pelo);
         ~Mamifero();
 
         //************************** S E T S ************************************

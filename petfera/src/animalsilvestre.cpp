@@ -13,7 +13,9 @@
 using std::string;
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-AnimalSilvestre::AnimalSilvestre(){}
+AnimalSilvestre::AnimalSilvestre(string autorizacao_ibama){
+    set_autorizacao_ibama(autorizacao_ibama);
+}
 AnimalSilvestre::~AnimalSilvestre(){}
 
 //************************** S E T S ************************************

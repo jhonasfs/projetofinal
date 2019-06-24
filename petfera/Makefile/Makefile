@@ -2,17 +2,23 @@ INC_DIR	= ../include
 SRC_DIR	= ../src
 OBJ_DIR = ../build
 LIB_DIR	= ../lib
+LST_OBJS = $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/tratador.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/animal.o $(OBJ_DIR)/animalsilvestre.o $(OBJ_DIR)/animalexotico.o $(OBJ_DIR)/animalnativo.o $(OBJ_DIR)/anfibio.o $(OBJ_DIR)/anfibionativo.o $(OBJ_DIR)/petfera.o
 
 CC		= g++
 # CXXFLAGS= -Wall -std=c++11 -ansi
 CXXFLAGS= -Wall -std=c++11 -ansi -g
-
+# all: petfera
 # all: animal.o tratador.o funcionario.o veterinario.o animalsilvestre.o animalnativo.o animalexotico.o anfibio.o mamifero.o reptil.o ave.o anfibionativo.o anfibioexotico.o mamiferonativo.o mamiferoexotico.o reptilnativo.o reptilexotico.o avenativo.o aveexotico.o petfera.o petfera
 # all: petfera.o petfera
 
 #CLASSES PRINCIPAIS
-petfera: ../main.cpp petfera.o funcionario.o veterinario.o tratador.o
-	$(CC) $(CXXFLAGS) ../main.cpp $(OBJ_DIR)/petfera.o $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/tratador.o -o ../main
+# petfera: $(OBJ_DIR)/animal.o $(OBJ_DIR)/animalsilvestre.o $(OBJ_DIR)/animalnativo.o $(OBJ_DIR)/anfibio.o $(OBJ_DIR)/anfibionativo.o $(OBJ_DIR)/petfera.o $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/tratador.o
+# 	$(CC) $(CXXFLAGS) $^ ../main.cpp -o ../main
+# 	# $(CC) $(CXXFLAGS) ../main.cpp $(OBJ_DIR)/petfera.o $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/tratador.o -o ../main
+
+# petfera: $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/tratador.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/animal.o $(OBJ_DIR)/animalsilvestre.o $(OBJ_DIR)/animalexotico.o $(OBJ_DIR)/animalnativo.o $(OBJ_DIR)/anfibio.o $(OBJ_DIR)/anfibionativo.o $(OBJ_DIR)/petfera.o
+petfera: funcionario.o tratador.o veterinario.o animal.o animalsilvestre.o animalexotico.o animalnativo.o anfibio.o anfibionativo.o petfera.o
+	$(CC) $(CXXFLAGS) $(LST_OBJS) ../main.cpp -o ../main
 
 petfera.o: $(SRC_DIR)/petfera.cpp $(INC_DIR)/petfera.h
 	$(CC) $(CXXFLAGS) -c $(SRC_DIR)/$*.cpp -o $(OBJ_DIR)/$@
@@ -71,7 +77,7 @@ animal.o: $(SRC_DIR)/animal.cpp $(INC_DIR)/animal.h
 
 # RELACIONADO A FUNCIONÁRIOS
 tratador.o: $(INC_DIR)/tratador.h $(SRC_DIR)/tratador.cpp
-	$(CC) $(CXXFLAGS) -c $(SRC_DIR)/$*.cpp -o $(OBJ_DIR)/$@.o
+	$(CC) $(CXXFLAGS) -c $(SRC_DIR)/$*.cpp -o $(OBJ_DIR)/$@
 	
 veterinario.o: $(INC_DIR)/veterinario.h $(SRC_DIR)/veterinario.cpp
 	$(CC) $(CXXFLAGS) -c $(SRC_DIR)/$*.cpp -o $(OBJ_DIR)/$@

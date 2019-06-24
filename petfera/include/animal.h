@@ -34,7 +34,7 @@ class Animal {
         static int total;
 
         //*********************** CONSTRUTOR/DESTRUTOR **************************
-        Animal();
+        Animal(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo);
         ~Animal();
 
         //************************** S E T S ************************************
