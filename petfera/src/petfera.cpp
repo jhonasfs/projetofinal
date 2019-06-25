@@ -64,7 +64,7 @@ PetFera::~PetFera(){}
 
 //************************** O U T R A S ************************************
 
-bool PetFera::cadastrarAnimal(stringstream *ss){
+bool PetFera::CadastrarAnimal(stringstream *ss){
     //int id; /**< Identificador do animal.*/
     string classe;  /**< Classe do animal: Amphibia (anfíbio), ​ Reptilia (réptil), ​ Aves (ave), Mammalia ​ (mamífero)*/
     string nome_cientifico; /**< Nome científico do animal.*/
@@ -226,7 +226,163 @@ bool PetFera::RemoverAnimal(int id){
         return false;    
 }
 
-string PetFera::ConsultaAnimal(short tipo_cunsulta, int id, string classe){
+bool PetFera::AlterarAnimal(int id, map< string, string > dados){
+    if (animais.find(id) == animais.end())
+        return false;
+
+    int tipo = animais[id].first;
+    string classe = animais[id].second->get_classe();
+
+    for (auto e: dados){
+        if(e.first == "classe"){
+            animais[id].second->set_classe(e.second);
+        } else if(e.first == "nome cientifco"){
+            animais[id].second->set_nome_cientifico(e.second);
+        } else if(e.first == "sexo"){
+            animais[id].second->set_sexo(e.second[0]);
+        } else if(e.first == "tamanho"){
+            animais[id].second->set_tamanho(stod(e.second));
+        } else if(e.first == "dieta"){
+            animais[id].second->set_dieta(e.second);
+        } else if(e.first == "veterinario"){
+            animais[id].second->set_id_veterinario(stoi(e.second));
+        } else if(e.first == "tratador"){
+            animais[id].second->set_id_tratador(stoi(e.second));
+        } else if(e.first == "nome batismo"){
+            animais[id].second->set_nome_batismo(e.second);
+        } 
+        
+        
+        else if (classe == "Anfíbio"){
+            if (tipo == 0){
+                AnfibioNativo *obj = new AnfibioNativo();
+                obj = (AnfibioNativo*) animais[id].second;
+                if (e.first == "autorizacao ibama"){
+                    obj->set_autorizacao_ibama(e.second);
+                } else if (e.first == "total mudas"){
+                    obj->set_total_de_mudas(stoi(e.second));
+                } else if (e.first == "ultima muda"){
+                    obj->set_ultima_muda(e.second);
+                } else if (e.first == "uf origem"){
+                    obj->set_uf_origem(e.second);
+                } else if (e.first == "autorizacao"){
+                    obj->set_autorizacao(e.second);
+                }
+                animais[id] = make_pair(tipo, obj);
+            } else  if (tipo == 1){
+                AnfibioExotico *obj = new AnfibioExotico();
+                obj = (AnfibioExotico*) animais[id].second;
+                if (e.first == "autorizacao ibama"){
+                    obj->set_autorizacao_ibama(e.second);
+                } else if (e.first == "total mudas"){
+                    obj->set_total_de_mudas(stoi(e.second));
+                } else if (e.first == "ultima muda"){
+                    obj->set_ultima_muda(e.second);
+                } else if (e.first == "pais origem"){
+                    obj->set_pais_origem(e.second);
+                }
+                animais[id] = make_pair(tipo, obj);
+            }
+        }
+
+
+        else if (classe == "Mamífero"){
+            if (tipo == 0){
+                MamiferoNativo *obj = new MamiferoNativo();
+                obj = (MamiferoNativo*) animais[id].second;
+                if (e.first == "autorizacao ibama"){
+                    obj->set_autorizacao_ibama(e.second);
+                } else if (e.first == "cor pelo"){
+                    obj->set_cor_pelo(e.second);
+                } else if (e.first == "uf origem"){
+                    obj->set_uf_origem(e.second);
+                } else if (e.first == "autorizacao"){
+                    obj->set_autorizacao(e.second);
+                }
+                animais[id] = make_pair(tipo, obj);
+            } else  if (tipo == 1){
+                MamiferoExotico *obj = new MamiferoExotico();
+                obj = (MamiferoExotico*) animais[id].second;
+                if (e.first == "autorizacao ibama"){
+                    obj->set_autorizacao_ibama(e.second);
+                } else if (e.first == "cor pelo"){
+                    obj->set_cor_pelo(e.second);
+                } else if (e.first == "pais origem"){
+                    obj->set_pais_origem(e.second);
+                }
+                animais[id] = make_pair(tipo, obj);
+            }
+        }
+
+        else if (classe == "Reptil"){
+            if (tipo == 0){
+                ReptilNativo *obj = new ReptilNativo();
+                obj = (ReptilNativo*) animais[id].second;
+                if (e.first == "autorizacao ibama"){
+                    obj->set_autorizacao_ibama(e.second);
+                } else if (e.first == "venenoso"){
+                    obj->set_venenoso(stoi(e.second));
+                } else if (e.first == "tipo veneno"){
+                    obj->set_tipo_veneno(e.second);
+                } else if (e.first == "uf origem"){
+                    obj->set_uf_origem(e.second);
+                } else if (e.first == "autorizacao"){
+                    obj->set_autorizacao(e.second);
+                }
+                animais[id] = make_pair(tipo, obj);
+            } else  if (tipo == 1){
+                ReptilExotico*obj = new ReptilExotico();
+                obj = (ReptilExotico*) animais[id].second;
+                if (e.first == "autorizacao ibama"){
+                    obj->set_autorizacao_ibama(e.second);
+                } else if (e.first == "venenoso"){
+                    obj->set_venenoso(stoi(e.second));
+                } else if (e.first == "tipo veneno"){
+                    obj->set_tipo_veneno(e.second);
+                } else if (e.first == "pais origem"){
+                    obj->set_pais_origem(e.second);
+                } 
+                animais[id] = make_pair(tipo, obj);
+            }
+        }
+
+        else if (classe == "Ave"){
+            if (tipo == 0){
+                AveNativo *obj = new AveNativo();
+                obj = (AveNativo*) animais[id].second;
+                if (e.first == "autorizacao ibama"){
+                    obj->set_autorizacao_ibama(e.second);
+                } else if (e.first == "tamanho bico"){
+                    obj->set_tamanho_do_bico_cm(stod(e.second));
+                } else if (e.first == "envergadura"){
+                    obj->set_envergadora_das_asas(stod(e.second));
+                } else if (e.first == "uf origem"){
+                    obj->set_uf_origem(e.second);
+                } else if (e.first == "autorizacao"){
+                    obj->set_autorizacao(e.second);
+                }
+                animais[id] = make_pair(tipo, obj);
+            } else  if (tipo == 1){
+                AveExotico *obj = new AveExotico();
+                obj = (AveExotico*) animais[id].second;
+                if (e.first == "autorizacao ibama"){
+                    obj->set_autorizacao_ibama(e.second);
+                } else if (e.first == "tamanho bico"){
+                    obj->set_tamanho_do_bico_cm(stod(e.second));
+                } else if (e.first == "envergadura"){
+                    obj->set_envergadora_das_asas(stod(e.second));
+                } else if (e.first == "pais origem"){
+                    obj->set_pais_origem(e.second);
+                } 
+                animais[id] = make_pair(tipo, obj);
+            }
+        }
+    }
+
+    return true;
+}
+
+string PetFera::ConsultarAnimal(short tipo_cunsulta, int id, string classe){
     stringstream out;
 
     if (tipo_cunsulta == 0){
@@ -241,14 +397,56 @@ string PetFera::ConsultaAnimal(short tipo_cunsulta, int id, string classe){
                     AnfibioNativo *obj = new AnfibioNativo();
                     obj = (AnfibioNativo*)animais[id].second;
 
-                    //out /* << obj->get_autorizacao_ibama()*/ << '\t' << obj->get_total_de_mudas() << '\t' << obj->get_ultima_muda() << '\t' /*<< obj->get_uf_origem() << '\t' << obj->get_autorizacao() << '\t'*/;
-                    out <<  "" + obj->get_autorizacao_ibama()  + to_string(obj->get_total_de_mudas()) + '\t' + obj->get_ultima_muda() + '\t';
+                    out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_total_de_mudas()) + '\t' + obj->get_ultima_muda() + '\t' + obj->get_uf_origem() + '\t' + obj->get_autorizacao();
+
                 } else if (tipo == EXOTICO){
                     AnfibioExotico *obj = new AnfibioExotico();
                     obj = (AnfibioExotico*)animais[id].second;
 
-                    //out /* << obj->get_autorizacao_ibama()*/ << '\t' << obj->get_total_de_mudas() << '\t' << obj->get_ultima_muda() << '\t' /*<< obj->get_uf_origem() << '\t' << obj->get_autorizacao() << '\t'*/;
-                    out <<  "" + to_string(obj->get_total_de_mudas()) + '\t' + obj->get_ultima_muda() + '\t';
+                    out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_total_de_mudas()) + '\t' + obj->get_ultima_muda() + '\t' + obj->get_pais_origem();
+
+                }
+            } else if (classe == "Mamífero"){
+                if (tipo == NATIVO){
+                    MamiferoNativo *obj = new MamiferoNativo();
+                    obj = (MamiferoNativo*)animais[id].second;
+
+                    out <<  "" + obj->get_autorizacao_ibama() + obj->get_cor_pelo() + '\t' + obj->get_uf_origem() + '\t' + obj->get_autorizacao();
+
+                } else if (tipo == EXOTICO){
+                    MamiferoExotico *obj = new MamiferoExotico();
+                    obj = (MamiferoExotico*)animais[id].second;
+
+                    out <<  "" + obj->get_autorizacao_ibama() + obj->get_cor_pelo() + '\t' + obj->get_pais_origem();
+
+                }
+            } else if (classe == "Repil"){
+                if (tipo == NATIVO){
+                    ReptilNativo *obj = new ReptilNativo();
+                    obj = (ReptilNativo*)animais[id].second;
+
+                    out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_venenoso()) + '\t' + obj->get_tipo_veneno() + '\t' + obj->get_uf_origem() + '\t' + obj->get_autorizacao();
+
+                } else if (tipo == EXOTICO){
+                    ReptilExotico *obj = new ReptilExotico();
+                    obj = (ReptilExotico*)animais[id].second;
+
+                    out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_venenoso()) + '\t' + obj->get_tipo_veneno() + '\t' + obj->get_pais_origem();
+
+                }
+            } else if (classe == "Ave"){
+                if (tipo == NATIVO){
+                    AveNativo *obj = new AveNativo();
+                    obj = (AveNativo*)animais[id].second;
+
+                    out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_tamanho_do_bico_cm()) + '\t' + to_string(obj->get_envergadora_das_asas()) + '\t' + obj->get_uf_origem() + '\t' + obj->get_autorizacao();
+
+                } else if (tipo == EXOTICO){
+                    AveExotico *obj = new AveExotico();
+                    obj = (AveExotico*)animais[id].second;
+
+                    out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_tamanho_do_bico_cm()) + '\t' + to_string(obj->get_envergadora_das_asas()) + '\t' + obj->get_pais_origem();
+
                 }
             }
 
@@ -258,6 +456,7 @@ string PetFera::ConsultaAnimal(short tipo_cunsulta, int id, string classe){
         for (map <int, pair<int, Animal*> >::iterator e = animais.begin(); e != animais.end(); e++){
             if (e->second.second->get_classe() == classe){
                 id = e->second.second->get_id();
+
                 int tipo = animais[id].first;
                 string classe = animais[id].second->get_classe();
 
@@ -268,8 +467,56 @@ string PetFera::ConsultaAnimal(short tipo_cunsulta, int id, string classe){
                         AnfibioNativo *obj = new AnfibioNativo();
                         obj = (AnfibioNativo*)animais[id].second;
 
-                        //out /* << obj->get_autorizacao_ibama()*/ << '\t' << obj->get_total_de_mudas() << '\t' << obj->get_ultima_muda() << '\t' /*<< obj->get_uf_origem() << '\t' << obj->get_autorizacao() << '\t'*/;
-                        out <<  "" + to_string(obj->get_total_de_mudas()) + '\t' + obj->get_ultima_muda() + '\t';
+                        out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_total_de_mudas()) + '\t' + obj->get_ultima_muda() + '\t' + obj->get_uf_origem() + '\t' + obj->get_autorizacao();
+
+                    } else if (tipo == EXOTICO){
+                        AnfibioExotico *obj = new AnfibioExotico();
+                        obj = (AnfibioExotico*)animais[id].second;
+
+                        out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_total_de_mudas()) + '\t' + obj->get_ultima_muda() + '\t' + obj->get_pais_origem();
+
+                    }
+                } else if (classe == "Mamífero"){
+                    if (tipo == NATIVO){
+                        MamiferoNativo *obj = new MamiferoNativo();
+                        obj = (MamiferoNativo*)animais[id].second;
+
+                        out <<  "" + obj->get_autorizacao_ibama() + obj->get_cor_pelo() + '\t' + obj->get_uf_origem() + '\t' + obj->get_autorizacao();
+
+                    } else if (tipo == EXOTICO){
+                        MamiferoExotico *obj = new MamiferoExotico();
+                        obj = (MamiferoExotico*)animais[id].second;
+
+                        out <<  "" + obj->get_autorizacao_ibama() + obj->get_cor_pelo() + '\t' + obj->get_pais_origem();
+
+                    }
+                } else if (classe == "Repil"){
+                    if (tipo == NATIVO){
+                        ReptilNativo *obj = new ReptilNativo();
+                        obj = (ReptilNativo*)animais[id].second;
+
+                        out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_venenoso()) + '\t' + obj->get_tipo_veneno() + '\t' + obj->get_uf_origem() + '\t' + obj->get_autorizacao();
+
+                    } else if (tipo == EXOTICO){
+                        ReptilExotico *obj = new ReptilExotico();
+                        obj = (ReptilExotico*)animais[id].second;
+
+                        out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_venenoso()) + '\t' + obj->get_tipo_veneno() + '\t' + obj->get_pais_origem();
+
+                    }
+                } else if (classe == "Ave"){
+                    if (tipo == NATIVO){
+                        AveNativo *obj = new AveNativo();
+                        obj = (AveNativo*)animais[id].second;
+
+                        out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_tamanho_do_bico_cm()) + '\t' + to_string(obj->get_envergadora_das_asas()) + '\t' + obj->get_uf_origem() + '\t' + obj->get_autorizacao();
+
+                    } else if (tipo == EXOTICO){
+                        AveExotico *obj = new AveExotico();
+                        obj = (AveExotico*)animais[id].second;
+
+                        out <<  "" + obj->get_autorizacao_ibama() + to_string(obj->get_tamanho_do_bico_cm()) + '\t' + to_string(obj->get_envergadora_das_asas()) + '\t' + obj->get_pais_origem();
+
                     }
                 }
 
@@ -283,6 +530,21 @@ string PetFera::ConsultaAnimal(short tipo_cunsulta, int id, string classe){
     return out.str();
 }
 
+string PetFera::ConsultarAnimal_Vet_Trat(short tipo_cunsulta, int id){
+    stringstream out;
+    //if (funcionarios.find(id) != funcionarios.end()){
+    if(true){
+        for (map <int, pair<int, Animal*> >::iterator e = animais.begin(); e != animais.end(); e++){
+            if ( (tipo_cunsulta == 0 && e->second.second->get_id_veterinario() == id) || (tipo_cunsulta == 1 && e->second.second->get_id_tratador() == id)){
+                out << "" + to_string(e->second.second->get_id()) + '\t' + e->second.second->get_classe() + '\t' + e->second.second->get_nome_cientifico() + '\t' + e->second.second->get_sexo() + '\t' + to_string(e->second.second->get_tamanho()) + '\t' + e->second.second->get_dieta() + '\t' + to_string(e->second.second->get_id_veterinario()) + '\t' + to_string(e->second.second->get_id_tratador()) + '\t' + e->second.second->get_nome_batismo() + '\n';
+            }
+        }
+    } else {
+        out << "falha";
+    }
+
+    return out.str();
+}
 
 bool PetFera::cadastroFuncionario(stringstream *ss){
     int id = 0;   /**< Identificador do funcionário.*/

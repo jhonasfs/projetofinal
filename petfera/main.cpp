@@ -21,7 +21,7 @@ int main(){
 
     std::cout << ss.str() << std::endl;
 
-    std::cout << petfera->cadastrarAnimal(&ss) << std::endl;
+    std::cout << petfera->CadastrarAnimal(&ss) << std::endl;
 
     cout << endl;
 
@@ -61,9 +61,31 @@ int main(){
     // cout << petfera->ConsultaAnimal(0,2,"");
     cout << endl;
 
-    cout << petfera->ConsultaAnimal(0,1,"");
+    map<string, string> dados;    
+    dados["sexo"] = "F";
+    dados["tamanho"] = "50";
+    dados["nome batismo"] = "Brutos";
+    dados["autorizacao ibama"] = "Sem autorização!";
+    dados["total mudas"] = "100";
+    dados["uf origem"] = "PE";
+    //dados["classe"] = "Mamífero";
+
+    cout << petfera->AlterarAnimal(1,dados);
+
+    cout << petfera->ConsultarAnimal(0,1,"");
     cout << endl;
-    cout << petfera->ConsultaAnimal(1,1,"Anfíbio");
+    cout << petfera->ConsultarAnimal(1,1,"Anfíbio");
+    cout << endl;
+
+    
+    
+    cout << endl;
+
+
+
+    cout << petfera->ConsultarAnimal_Vet_Trat(0, 1);
+    cout << endl;
+    cout << petfera->ConsultarAnimal_Vet_Trat(1, 2);
 
     // ss << 1 << ' ' << "nome sobrenome" << '\n' << "cpf" << ' ' << 20 << ' ' << O << ' ' << '+' << ' ' << "especialidade" << ' ' << 1;
 

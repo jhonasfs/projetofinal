@@ -17,11 +17,11 @@
 #include "veterinario.h"
 #include "tratador.h"
 
-using namespace std;
-
 #ifndef PETFERA_H
 
 #define PETFERA_H
+
+using namespace std;
 
 class PetFera {
     private:
@@ -45,7 +45,7 @@ class PetFera {
         * @param Falta fazer
         * @return True/False
         */
-        bool cadastrarAnimal(stringstream *ss);
+        bool CadastrarAnimal(stringstream *ss);
 
         /**
         * @brief Funcão que remove um animal no sistema
@@ -55,11 +55,25 @@ class PetFera {
         bool RemoverAnimal(int id);
 
         /**
+        * @brief Funcão que alterar dados de um animal no sistema por id
+        * @param FALTA FAZER
+        * @return FALTA FAZER COLOCAR A KEYS DO MAP 
+        */
+        bool AlterarAnimal(int id, map< string, string > dados);
+
+        /**
         * @brief Funcão que consulta um animal no sistema por id ou por classe
         * @param ID/classe do(s) animal(is) a ser consultado; FALTA FAZER
         * @return stringstream com todos os dados dos animais separador por tabulatura e linha
         */
-        string ConsultaAnimal(short tipo_cunsulta, int id, string classe);
+        string ConsultarAnimal(short tipo_cunsulta, int id, string classe);
+
+         /**
+        * @brief Funcão que consulta um animal no sistema por id do veterinario ou tratador
+        * @param FALTA FAZER
+        * @return stringstream com todos os dados dos animais separador por tabulatura e linha
+        */
+        string ConsultarAnimal_Vet_Trat(short tipo_cunsulta, int id);
 
          /**
         * @brief Funcão que cadastra um funcionario no sistema
