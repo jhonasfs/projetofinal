@@ -1,0 +1,56 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++ build active file",
+            "command": "make -C ${fileDirname}/Makefile",
+            "args": [],
+            "options": {
+                "cwd": "/usr/bin"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
+// {
+//     "tasks": [
+//         {
+//             "type": "shell",
+//             "label": "g++ build active file",
+//             "command": "/usr/bin/g++",
+//             "args": [
+//                 "-g",
+//                 "${file}",
+//                 "${fileDirname}/src/petfera.cpp",
+//                 "${fileDirname}/build/funcionario.o",
+//                 "${fileDirname}/build/veterinario.o",
+//                 "${fileDirname}/build/tratador.o",
+//                 "-o",
+//                 "${fileDirname}/${fileBasenameNoExtension}"
+//             ],
+//             "options": {
+//                 "cwd": "/usr/bin"
+//             }
+//         }
+//     ],
+//     "version": "2.0.0"
+// }
+// {
+//     "tasks": [
+//         {
+//             "type": "shell",
+//             "label": "g++ build active file",
+//             "command": "/usr/bin/g++",
+//             "args": [
+//                 "-g",
+//                 "${file}",
+//                 "-o",
+//                 "${fileDirname}/${fileBasenameNoExtension}"
+//             ],
+//             "options": {
+//                 "cwd": "/usr/bin"
+//             }
+//         }
+//     ],
+//     "version": "2.0.0"
+// }
