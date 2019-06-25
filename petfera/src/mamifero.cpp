@@ -13,7 +13,8 @@
 using std::string;
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-Mamifero::Mamifero(int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, string cor_pelo) : Animal(classe, nome_cientifico, sexo, tamanho, dieta, id_veterinario, id_tratador, nome_batismo){
+Mamifero::Mamifero(){}
+Mamifero::Mamifero(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, string cor_pelo) : Animal(classe, nome_cientifico, sexo, tamanho, dieta, id_veterinario, id_tratador, nome_batismo){
     set_cor_pelo(cor_pelo);
 }
 Mamifero::~Mamifero(){}

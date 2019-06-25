@@ -8,7 +8,6 @@
 */
 
 #include <string>
-// #include "veterinario.h"
 
 using std::string;
 
@@ -34,6 +33,7 @@ class Animal {
         static int total;
 
         //*********************** CONSTRUTOR/DESTRUTOR **************************
+        Animal();
         Animal(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo);
         ~Animal();
 
@@ -164,6 +164,13 @@ class Animal {
         * @return Nome de batismo do animal
         */
         string get_nome_batismo();
+
+        /**
+        * @brief Funcão que retorna o nome de batismo do animal
+        * @param 
+        * @return Nome de batismo do animal
+        */
+        int get_total();
 
         //************************** O U T R A S ************************************
 

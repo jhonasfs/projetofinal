@@ -13,7 +13,8 @@
 using std::string;
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-Reptil::Reptil(int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, bool venenoso, string tipo_veneno) : Animal(classe, nome_cientifico, sexo, tamanho, dieta, id_veterinario, id_tratador, nome_batismo){
+Reptil::Reptil(){}
+Reptil::Reptil(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, bool venenoso, string tipo_veneno) : Animal(classe, nome_cientifico, sexo, tamanho, dieta, id_veterinario, id_tratador, nome_batismo){
     set_venenoso(venenoso);
     set_tipo_veneno(tipo_veneno);
 }

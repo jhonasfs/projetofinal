@@ -21,7 +21,8 @@ class Mamifero : public Animal {
         std::string cor_pelo; /**< Cor do pelo do animal.*/
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
-        Mamifero(int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, string cor_pelo);
+        Mamifero();
+        Mamifero(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, string cor_pelo);
         ~Mamifero();
 
         //************************** S E T S ************************************

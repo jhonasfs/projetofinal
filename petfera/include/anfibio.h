@@ -14,17 +14,17 @@
 
 #define ANFIBIO_H
 
-
+using std::string;
 
 class Anfibio : public Animal {
     protected:
         int total_de_mudas; /**< Total de mudas do animal.*/
-        std::string ultima_muda; /**< Data da última muda do animal.*/
+        string ultima_muda; /**< Data da última muda do animal.*/
 
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         Anfibio();
-        Anfibio(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, int total_de_mudas, std::string ultima_muda);
+        Anfibio(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, int total_de_mudas, string ultima_muda);
         ~Anfibio();
 
         //************************** S E T S ************************************
@@ -40,7 +40,7 @@ class Anfibio : public Animal {
         * @param dia, mes, ano Dia, mês e ano da última muda do animal
         * @return Vazio
         */
-        void set_ultima_muda(std::string);
+        void set_ultima_muda(string);
 
         //************************** G E T S ************************************
         /**
@@ -48,14 +48,14 @@ class Anfibio : public Animal {
         * @param 
         * @return Total de mudas do animal
         */
-        int get_total_de_mudas(int total);
+        int get_total_de_mudas();
 
         /**
         * @brief Funcão que retorma a data da última muda do animal
         * @param
         * @return Data da última muda do animal
         */
-        std::string get_ultima_muda();
+        string get_ultima_muda();
 
         //************************** O U T R A S ************************************
 

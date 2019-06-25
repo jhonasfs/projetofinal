@@ -24,6 +24,7 @@ class AnimalExotico : public  AnimalSilvestre{
 
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
+        AnimalExotico();
         AnimalExotico(string pais_origem, string autorizacao_ibama);
         ~AnimalExotico();
 

@@ -13,6 +13,7 @@
 using std::string;
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
+AnimalExotico::AnimalExotico(){}
 AnimalExotico::AnimalExotico(string pais_origem, string autorizacao_ibama) : AnimalSilvestre(autorizacao_ibama){
     set_pais_origem(pais_origem);
 }

@@ -25,7 +25,8 @@ class Reptil : public Animal {
 
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
-        Reptil(int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, bool venenoso, string tipo_veneno);
+        Reptil();
+        Reptil(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, bool venenoso, string tipo_veneno);
         ~Reptil();
 
         //************************** S E T S ************************************

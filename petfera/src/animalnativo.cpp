@@ -13,6 +13,7 @@
 using std::string;
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
+AnimalNativo:: AnimalNativo(){}
 AnimalNativo:: AnimalNativo(string uf_origem, string autorizacao, string autorizacao_ibama) : AnimalSilvestre(autorizacao_ibama){
     set_uf_origem(uf_origem);
     set_autorizacao(autorizacao);

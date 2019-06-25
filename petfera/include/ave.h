@@ -22,7 +22,8 @@ class Ave : public Animal {
 
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
-        Ave(int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, double tamanho_do_bico_cm, double envergadora_das_asas);
+        Ave();
+        Ave(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, double tamanho_do_bico_cm, double envergadora_das_asas);
         ~Ave();
 
         //************************** S E T S ************************************

@@ -23,6 +23,7 @@ class AnimalSilvestre{
         
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
+        AnimalSilvestre();
         AnimalSilvestre(string autorizacao_ibama);
         ~AnimalSilvestre();
 
@@ -37,7 +38,7 @@ class AnimalSilvestre{
         //************************** G E T S ************************************
         /**
         * @brief Funcão que retorna a autorização IBAMA para animal
-        * @param 
+        * @param FAZER A SOBRECARGA DESTA FUNÇÂO NAS OUTRAS CLASSES FILHAS
         * @return Autorização IBAMA
         */
         string get_autorizacao_ibama();

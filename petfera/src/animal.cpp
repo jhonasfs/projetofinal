@@ -12,12 +12,13 @@
 
 using std::string;
 
-int Animal::total = 0;
+// int Animal::total = 0;
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
+Animal::Animal(){}
 Animal::Animal(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo){
     total++;
-    set_id(total);
+    set_id(get_total());
     set_classe(classe);
     set_nome_cientifico(nome_cientifico);
     set_sexo(sexo);
@@ -103,6 +104,10 @@ int Animal::get_id_tratador(){
 
 string Animal::get_nome_batismo(){
     return nome_batismo;
+}
+
+int Animal::get_total(){
+    return total;
 }
 
 //************************** O U T R A S ************************************

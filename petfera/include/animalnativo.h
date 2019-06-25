@@ -25,6 +25,7 @@ class AnimalNativo : public  AnimalSilvestre {
 
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
+        AnimalNativo();
         AnimalNativo(string uf_origem, string autorizacao, string autorizacao_ibama);
         ~AnimalNativo();
 

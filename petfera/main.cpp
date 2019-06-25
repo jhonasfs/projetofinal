@@ -13,23 +13,73 @@
 int main(){
     PetFera *petfera = new PetFera();
 
-    stringstream ss;
+    stringstream ss;    
 
-    ss << 1 << ' ' << "nome sobrenome" << '\n' << "cpf" << ' ' << 20 << ' ' << O << ' ' << '+' << ' ' << "especialidade" << ' ' << 1;
-
-    std::cout << ss.str() << std::endl;
-
-    std::cout << petfera->cadastroFuncionario(&ss) << std::endl;    
-
-    ss.clear();
-    ss.seekp(0);
-    ss.seekg(0);
-
-    ss << 0 << ' ' << "nome1" << '\n' << "cpf1" << ' ' << 25 << ' ' << 2 << ' ' << '-' << ' ' << "especialidade2" << ' ' << "000/RN";
+    //Anfibio Nativo
+    ss << 0 << '\n' << "Anfíbio"  << '\n' <<  "Nome Cientifico" << '\n' << "M"  << '\n' << 10  << '\n' << "Dieta Dieta"  << '\n' << 1  << '\n' << 2 << '\n' << "Nome Batismo" << '\n';
+    ss << "Autorização Ibama"  << '\n' << 10  << '\n' << "10-10-2010" << '\n' << "RN" << '\n' << "Autorização 2" << '\n';
 
     std::cout << ss.str() << std::endl;
 
-    std::cout << petfera->cadastroFuncionario(&ss) << std::endl;
+    std::cout << petfera->cadastrarAnimal(&ss) << std::endl;
+
+    cout << endl;
+
+    // ss.clear();
+    // ss.seekp(0);
+    // ss.seekg(0);
+
+    // ss << 0 << "Anfíbio"  << '\n' <<  "Nome Cientifico 2" << '\n' << "M"  << '\n' << 10  << '\n' << "Dieta Dieta"  << '\n' << 1  << '\n' << 2 << '\n' << "Nome Batismo 2" << '\n';
+    // ss << "Autorização Ibama"  << '\n' << 10  << '\n' << "10/10/2010" << '\n' << "Brasil" << '\n';
+
+    // std::cout << ss.str() << std::endl;
+
+    // std::cout << petfera->cadastrarAnimal(&ss) << std::endl;
+
+    // cout << endl;
+
+    // ss.clear();
+    // ss.seekp(0);
+    // ss.seekg(0);
+
+    // ss << 1 << "Anfíbio"  << '\n' <<  "Nome Cientifico 2" << '\n' << "M"  << '\n' << 10  << '\n' << "Dieta Dieta"  << '\n' << 1  << '\n' << 2 << '\n' << "Nome Batismo 2" << '\n';
+    // ss << "Autorização Ibama"  << '\n' << 10  << '\n' << "10/10/2010" << '\n' << "Brasil" << '\n';
+
+    // std::cout << ss.str() << std::endl;
+
+    // std::cout << petfera->cadastrarAnimal(&ss) << std::endl;
+
+    // cout << endl;
+
+    // //cout << petfera->RemoverAnimal(3) << endl;
+
+    // cout << endl;
+
+    // cout << petfera->ConsultaAnimal(0,1,"");
+    // cout << endl;
+
+    // cout << petfera->ConsultaAnimal(0,2,"");
+    cout << endl;
+
+    cout << petfera->ConsultaAnimal(0,1,"");
+    cout << endl;
+    cout << petfera->ConsultaAnimal(1,1,"Anfíbio");
+
+    // ss << 1 << ' ' << "nome sobrenome" << '\n' << "cpf" << ' ' << 20 << ' ' << O << ' ' << '+' << ' ' << "especialidade" << ' ' << 1;
+
+    // std::cout << ss.str() << std::endl;
+
+    // std::cout << petfera->cadastroFuncionario(&ss) << std::endl;    
+
+    // ss.clear();
+    // ss.seekp(0);
+    // ss.seekg(0);
+
+    // ss << 0 << ' ' << "nome1" << '\n' << "cpf1" << ' ' << 25 << ' ' << 2 << ' ' << '-' << ' ' << "especialidade2" << ' ' << "000/RN";
+
+    // std::cout << ss.str() << std::endl;
+
+    // std::cout << petfera->cadastroFuncionario(&ss) << std::endl;
 
     return 0;
 

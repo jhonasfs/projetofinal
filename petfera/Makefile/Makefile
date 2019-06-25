@@ -2,14 +2,14 @@ INC_DIR	= ../include
 SRC_DIR	= ../src
 OBJ_DIR = ../build
 LIB_DIR	= ../lib
-LST_OBJS = $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/tratador.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/animal.o $(OBJ_DIR)/animalsilvestre.o $(OBJ_DIR)/animalexotico.o $(OBJ_DIR)/animalnativo.o $(OBJ_DIR)/anfibio.o $(OBJ_DIR)/anfibionativo.o $(OBJ_DIR)/petfera.o
+LST_OBJS = $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/tratador.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/animal.o $(OBJ_DIR)/animalsilvestre.o $(OBJ_DIR)/animalexotico.o $(OBJ_DIR)/animalnativo.o $(OBJ_DIR)/anfibio.o $(OBJ_DIR)/anfibionativo.o $(OBJ_DIR)/anfibioexotico.o $(OBJ_DIR)/mamifero.o $(OBJ_DIR)/mamiferonativo.o $(OBJ_DIR)/mamiferoexotico.o $(OBJ_DIR)/reptil.o $(OBJ_DIR)/reptilnativo.o $(OBJ_DIR)/reptilexotico.o $(OBJ_DIR)/ave.o $(OBJ_DIR)/avenativo.o $(OBJ_DIR)/aveexotico.o $(OBJ_DIR)/petfera.o
 
 CC		= g++
 # CXXFLAGS= -Wall -std=c++11 -ansi
-CXXFLAGS= -Wall -std=c++11 -ansi -g
-# all: petfera
+CXXFLAGS= -Wall -W -ansi -std=c++11 -g
+# all: petfera mamiferonativo.o
 # all: animal.o tratador.o funcionario.o veterinario.o animalsilvestre.o animalnativo.o animalexotico.o anfibio.o mamifero.o reptil.o ave.o anfibionativo.o anfibioexotico.o mamiferonativo.o mamiferoexotico.o reptilnativo.o reptilexotico.o avenativo.o aveexotico.o petfera.o petfera
-# all: petfera.o petfera
+all: petfera
 
 #CLASSES PRINCIPAIS
 # petfera: $(OBJ_DIR)/animal.o $(OBJ_DIR)/animalsilvestre.o $(OBJ_DIR)/animalnativo.o $(OBJ_DIR)/anfibio.o $(OBJ_DIR)/anfibionativo.o $(OBJ_DIR)/petfera.o $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/tratador.o
@@ -17,7 +17,7 @@ CXXFLAGS= -Wall -std=c++11 -ansi -g
 # 	# $(CC) $(CXXFLAGS) ../main.cpp $(OBJ_DIR)/petfera.o $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/tratador.o -o ../main
 
 # petfera: $(OBJ_DIR)/funcionario.o $(OBJ_DIR)/tratador.o $(OBJ_DIR)/veterinario.o $(OBJ_DIR)/animal.o $(OBJ_DIR)/animalsilvestre.o $(OBJ_DIR)/animalexotico.o $(OBJ_DIR)/animalnativo.o $(OBJ_DIR)/anfibio.o $(OBJ_DIR)/anfibionativo.o $(OBJ_DIR)/petfera.o
-petfera: funcionario.o tratador.o veterinario.o animal.o animalsilvestre.o animalexotico.o animalnativo.o anfibio.o anfibionativo.o petfera.o
+petfera: funcionario.o tratador.o veterinario.o animal.o animalsilvestre.o animalexotico.o animalnativo.o anfibio.o anfibionativo.o anfibioexotico.o mamifero.o mamiferonativo.o mamiferoexotico.o reptil.o reptilnativo.o reptilexotico.o ave.o avenativo.o aveexotico.o petfera.o
 	$(CC) $(CXXFLAGS) $(LST_OBJS) ../main.cpp -o ../main
 
 petfera.o: $(SRC_DIR)/petfera.cpp $(INC_DIR)/petfera.h

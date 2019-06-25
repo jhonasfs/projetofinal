@@ -10,7 +10,8 @@
 #include "../include/ave.h"
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-Ave::Ave(int id, string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, double tamanho_do_bico_cm, double envergadora_das_asas) : Animal(classe, nome_cientifico, sexo, tamanho, dieta, id_veterinario, id_tratador, nome_batismo){
+Ave::Ave(){}
+Ave::Ave(string classe, string nome_cientifico, char sexo, double tamanho, string dieta, int id_veterinario, int id_tratador, string nome_batismo, double tamanho_do_bico_cm, double envergadora_das_asas) : Animal(classe, nome_cientifico, sexo, tamanho, dieta, id_veterinario, id_tratador, nome_batismo){
     set_tamanho_do_bico_cm(tamanho_do_bico_cm);
     set_envergadora_das_asas(envergadora_das_asas);
 }
