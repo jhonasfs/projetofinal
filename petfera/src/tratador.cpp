@@ -11,8 +11,9 @@
 #include "../include/tratador.h"
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-Tratador::Tratador(){
-    total++;
+Tratador::Tratador(){}
+Tratador::Tratador(string nome, string cpf, short idade, short tipo_sanguineo, char fator_rh, string especialidade, int nivel_de_seguranca) : Funcionario(nome, cpf, idade, tipo_sanguineo, fator_rh, especialidade){
+    set_nivel_de_seguranca(nivel_de_seguranca);
 }
 Tratador::~Tratador(){}
 

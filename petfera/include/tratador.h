@@ -22,6 +22,7 @@ class Tratador : public Funcionario{
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         Tratador();
+        Tratador(string nome, string cpf, short idade, short tipo_sanguineo, char fator_rh, string especialidade, int nivel_de_seguranca);
         ~Tratador();
 
         //************************** S E T S ************************************

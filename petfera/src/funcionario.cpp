@@ -12,11 +12,19 @@
 
 using std::string;
 
-int Funcionario::total = 0;
+// int Funcionario::total = 0;
 
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-Funcionario::Funcionario(){
-    // total++;
+Funcionario::Funcionario(){}
+Funcionario::Funcionario(string nome, string cpf, short idade, short tipo_sanguineo, char fator_rh, string especialidade){
+    total++;
+    set_id(total);
+    set_nome(nome);
+    set_cpf(cpf);
+    set_idade(idade);
+    set_tipo_sanguineo(tipo_sanguineo);
+    set_fator_rh(fator_rh);
+    set_especialidade(especialidade);
 }
 Funcionario::~Funcionario(){}
 
@@ -60,7 +68,7 @@ string Funcionario::get_nome(){
     return nome;
 }
 
-string Funcionario::get_cpf(string cpf){
+string Funcionario::get_cpf(){
     return cpf;
 }
 

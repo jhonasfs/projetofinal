@@ -30,6 +30,7 @@ class Funcionario {
 
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         Funcionario();
+        Funcionario(string nome, string cpf, short idade, short tipo_sanguineo, char fator_rh, string especialidade);
         ~Funcionario();
 
         //************************** S E T S ************************************
@@ -103,7 +104,7 @@ class Funcionario {
         * @param 
         * @return CPF do funcionário
         */        
-        string get_cpf(string cpf);
+        string get_cpf();
 
         /**
         * @brief Funcão que retorna a idade do funcionário

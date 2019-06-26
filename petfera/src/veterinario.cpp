@@ -10,9 +10,12 @@
 #include <string>
 #include "../include/veterinario.h"
 
+using std::string;
+
 //*********************** CONSTRUTOR/DESTRUTOR **************************
-Veterinario::Veterinario(){
-    total++;
+Veterinario::Veterinario(){}
+Veterinario::Veterinario(string nome, string cpf, short idade, short tipo_sanguineo, char fator_rh, string especialidade, string crmv) : Funcionario(nome, cpf, idade, tipo_sanguineo, fator_rh, especialidade){
+    set_crmv(crmv);
 }
 Veterinario::~Veterinario(){}
 

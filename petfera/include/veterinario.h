@@ -14,6 +14,7 @@
 
 #define VETERINARIO_H
 
+using std::string;
 
 class Veterinario : public Funcionario {
     private:
@@ -22,6 +23,7 @@ class Veterinario : public Funcionario {
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         Veterinario();
+        Veterinario(string nome, string cpf, short idade, short tipo_sanguineo, char fator_rh, string especialidade, string crmv);
         ~Veterinario();
 
         //************************** S E T S ************************************

@@ -11,6 +11,8 @@
 #include <utility>
 #include <sstream>
 #include <string>
+#include <fstream>
+
 #include "animal.h"
 #include "anfibionativo.h"
 #include "funcionario.h"
@@ -26,11 +28,14 @@ using namespace std;
 class PetFera {
     private:
         map <int, pair<int, Animal* > > animais;   /**< Lista dos animais cadastrados no sistema.*/
-        map <int, pair<int, Funcionario> > funcionarios;   /**< Lista dos funcionários cadastrados no sistema.*/
+        map <int, pair<int, Funcionario* > > funcionarios;   /**< Lista dos funcionários cadastrados no sistema.*/
+        string CaminhoArqAnimais;
+        string CaminhoArqFuncionarios;
 
     public:
         //*********************** CONSTRUTOR/DESTRUTOR **************************
         PetFera();
+        PetFera(string CaminhoArqAnimais, string CaminhoArqFuncionarios);
         ~PetFera();
 
         //************************** S E T S ************************************
@@ -45,7 +50,7 @@ class PetFera {
         * @param Falta fazer
         * @return True/False
         */
-        bool CadastrarAnimal(stringstream *ss);
+        bool CadastrarAnimal(stringstream *ss, short type);
 
         /**
         * @brief Funcão que remove um animal no sistema
@@ -75,12 +80,49 @@ class PetFera {
         */
         string ConsultarAnimal_Vet_Trat(short tipo_cunsulta, int id);
 
-         /**
+        /**
         * @brief Funcão que cadastra um funcionario no sistema
         * @param Falta fazer
         * @return True/False
         */
-        bool cadastroFuncionario(stringstream *ss);  
+        bool CadastrarFuncionario(stringstream *ss, short type);
+
+        /**
+        * @brief Funcão que Consulta ou lista funcionarios no sistema
+        * @param FALTA FAZER
+        * @return True/False
+        */
+        string ConsultaFuncionario(int id);
+
+        /**
+        * @brief Funcão que escreve um arquivo Animais.
+        * @param FALTA FAZER
+        * @return True/False
+        */
+        bool EscritaArquivoAnimais();
+
+        /**
+        * @brief Funcão que escreve um arquivo Funcionario.
+        * @param FALTA FAZER
+        * @return True/False
+        */
+        bool EscritaArquivoFuncionarios();
+
+        /**
+        * @brief Funcão que ler um arquivo Animais.
+        * @param FALTA FAZER
+        * @return True/False
+        */
+        bool LeituraArquivoAnimais();
+
+        /**
+        * @brief Funcão que ler um arquivo Funcionario.
+        * @param FALTA FAZER
+        * @return True/False
+        */
+        bool LeituraArquivoFuncionarios();
+
+        string ConsultarAnimalGeral(string classe, int id_vet, int id_ttd);
 
 };
 
